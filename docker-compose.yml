@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  openjtalk:
+    container_name: docker-openjtalk-container
+    build:
+      context: .
+    image: docker-openjtalk
+    restart: always
+    environment:
+      - PULSE_SERVER=unix:/tmp/pulseaudio.socket
+      - PULSE_COOKIE=/tmp/pulseaudio.cookie
+    tty: true
+    volumes:
+      - /tmp/pulseaudio.client.conf:/etc/pulse/client.conf
+      - /tmp/pulseaudio.socket:/tmp/pulseaudio.socket
+
+
