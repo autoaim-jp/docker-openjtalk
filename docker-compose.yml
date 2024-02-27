@@ -10,7 +10,9 @@ services:
       - PULSE_SERVER=unix:/tmp/pulseaudio.socket
       - PULSE_COOKIE=/tmp/pulseaudio.cookie
     tty: true
+    working_dir: /app/
     volumes:
+      - ./app/:/app/
       - /tmp/pulseaudio.client.conf:/etc/pulse/client.conf
       - /tmp/pulseaudio.socket:/tmp/pulseaudio.socket
 

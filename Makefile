@@ -9,7 +9,8 @@ setup:
 start:
 	docker compose up -d
 	# docker attach docker-openjtalk-container
-	docker exec -it docker-openjtalk-container /bin/bash
+	# docker exec -it docker-openjtalk-container /bin/bash
+	docker exec -it docker-openjtalk-container /app/run.sh
 
 stop:
 	docker compose down
